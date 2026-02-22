@@ -19,17 +19,7 @@ The model used is **Xception** (Extreme Inception), pre-trained on ImageNet. Xce
 - Total images: 7,023 MRI scans
 - Classes: Glioma, Meningioma, No Tumor, Pituitary
 - Already split into Training and Testing folders
-
----
-
-## Accuracy
-
-| Phase | Accuracy |
-|-------|----------|
-| Phase 1 - Head only | ~88% |
-| Phase 2 - Fine-tuned | ~93% |
-| Validation Accuracy  | ~89% |
-
+  
 ---
 
 ## Classes
