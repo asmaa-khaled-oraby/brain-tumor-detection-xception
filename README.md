@@ -28,3 +28,25 @@ The model used is **Xception** (Extreme Inception), pre-trained on ImageNet. Xce
 - Meningioma
 - No Tumor
 - Pituitary Tumor
+
+---
+
+
+## Fine-Tuning Strategy
+
+Training was done in two phases to get the best results without damaging the pretrained weights:
+
+**Phase 1** — The Xception base was fully frozen and only the new classification head was trained. This lets the new layers learn first before touching the pretrained weights. Learning rate: 1e-3
+
+**Phase 2** — The last convolutional block of Xception (block14) was unfrozen and fine-tuned along with the head. This allows the model to adapt its high-level features to brain MRI images specifically. Learning rate: 1e-5
+
+---
+
+## Results
+
+| Metric | Value |
+|--------|-------|
+| Training Accuracy | ~93% |
+| Validation Accuracy | ~89% |
+| Number of Classes | 4 |
+| Input Image Size | 299 × 299 |
